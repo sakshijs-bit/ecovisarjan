@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Track Idol | EcoVisarjan</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="/" class="logo">
+        <span>Eco</span>Visarjan
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/register">
+            Register Idol
+        </a>
+
+        <a href="/track" class="active">
+            Track Idol
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+    </div>
+
+    <a href="/register" class="nav-button">
+        Register Now
+    </a>
+
+</nav>
+
+
+
+<!-- ================= TRACK PAGE ================= -->
+
+<section class="track-page">
+
+
+    <!-- ================= PAGE HEADING ================= -->
+
+    <div class="track-heading">
+
+        <p class="track-eyebrow">
+            ECOVISARJAN TRACKING
+        </p>
+
+        <h1>
+            Follow your idol's<br>
+            <span>journey.</span>
+        </h1>
+
+        <p>
+            Enter your unique EcoVisarjan Idol ID to see
+            where your idol is in its recovery journey.
+        </p>
+
+    </div>
+
+
+
+    <!-- ================= SEARCH CARD ================= -->
+
+    <div class="track-search-card">
+
+        <div class="track-search-header">
+
+            <div>
+
+                <p class="form-label">
+                    TRACK YOUR IDOL
+                </p>
+
+                <h2>
+                    Enter your Idol ID
+                </h2>
+
+            </div>
+
+            <div class="track-search-badge">
+                ID
+            </div>
+
+        </div>
+
+
+        <form
+            class="track-form"
+            action="/track"
+            method="get"
+        >
+
+            <label for="idolId">
+                EcoVisarjan Idol ID
+            </label>
+
+            <div class="track-input-row">
+
+                <input
+                    type="text"
+                    id="idolId"
+                    name="id"
+                    placeholder="e.g. EV-A3F91C"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="track-submit"
+                >
+                    Track Idol
+                    <span>→</span>
+                </button>
+
+            </div>
+
+            <p class="track-hint">
+                Enter the Idol ID provided to you after registration.
+            </p>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- ================= ERROR ================= -->
+
+    <div
+        th:if="${error}"
+        class="track-error"
+    >
+
+        <div class="error-symbol">
+            !
+        </div>
+
+        <div>
+
+            <strong>
+                Idol Not Found
+            </strong>
+
+            <p th:text="${error}">
+                Idol ID not found.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= IDOL RESULT ================= -->
+
+    <div
+        th:if="${idol}"
+        class="idol-card"
+    >
+
+
+        <!-- RESULT HEADER -->
+
+        <div class="idol-header">
+
+            <div>
+
+                <p class="result-eyebrow">
+                    RECOVERY RECORD
+                </p>
+
+                <h2>
+                    Idol Recovery Journey
+                </h2>
+
+            </div>
+
+            <div
+                class="idol-id"
+                th:text="${idol.idolId}"
+            >
+                EV-XXXXXX
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= DETAILS ================= -->
+
+        <div class="details">
+
+
+            <div class="detail-box">
+
+                <span class="detail-number">
+                    01
+                </span>
+
+                <div>
+                    <strong>
+                        Devotee
+                    </strong>
+
+                    <span th:text="${idol.devoteeName}">
+                        Sakshi
+                    </span>
+                </div>
+
+            </div>
+
+
+
+            <div class="detail-box">
+
+                <span class="detail-number">
+                    02
+                </span>
+
+                <div>
+                    <strong>
+                        Mobile
+                    </strong>
+
+                    <span th:text="${idol.mobile}">
+                        9876543210
+                    </span>
+                </div>
+
+            </div>
+
+
+
+            <div class="detail-box">
+
+                <span class="detail-number">
+                    03
+                </span>
+
+                <div>
+                    <strong>
+                        Material
+                    </strong>
+
+                    <span th:text="${idol.material}">
+                        POP
+                    </span>
+                </div>
+
+            </div>
+
+
+
+            <div class="detail-box">
+
+                <span class="detail-number">
+                    04
+                </span>
+
+                <div>
+                    <strong>
+                        Idol Size
+                    </strong>
+
+                    <span th:text="${idol.size}">
+                        Medium
+                    </span>
+                </div>
+
+            </div>
+
+
+
+            <div class="detail-box">
+
+                <span class="detail-number">
+                    05
+                </span>
+
+                <div>
+                    <strong>
+                        Location
+                    </strong>
+
+                    <span th:text="${idol.location}">
+                        Mumbai
+                    </span>
+                </div>
+
+            </div>
+
+
+
+            <div class="detail-box">
+
+                <span class="detail-number">
+                    06
+                </span>
+
+                <div>
+                    <strong>
+                        Visarjan Date
+                    </strong>
+
+                    <span th:text="${idol.visarjanDate}">
+                        2026-09-30
+                    </span>
+                </div>
+
+            </div>
+
+
+
+            <div class="detail-box status-box">
+
+                <span class="detail-number">
+                    07
+                </span>
+
+                <div>
+
+                    <strong>
+                        Current Status
+                    </strong>
+
+                    <span
+                        class="status-value"
+                        th:text="${idol.status}"
+                    >
+                        Registered
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= JOURNEY ================= -->
+
+        <div class="journey-heading">
+
+            <p class="result-eyebrow">
+                RECOVERY PROCESS
+            </p>
+
+            <h2>
+                Your idol's journey
+            </h2>
+
+            <p>
+                Follow every stage from registration
+                to meaningful reuse.
+            </p>
+
+        </div>
+
+
+
+        <div class="track-timeline">
+
+
+            <!-- 01 -->
+
+            <div class="track-timeline-item active">
+
+                <div class="timeline-marker">
+                    01
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-label">
+                        REGISTERED
+                    </span>
+
+                    <h3>
+                        Registration
+                    </h3>
+
+                    <p>
+                        Idol registered with EcoVisarjan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="track-timeline-item">
+
+                <div class="timeline-marker">
+                    02
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-label">
+                        STAGE 02
+                    </span>
+
+                    <h3>
+                        Visarjan
+                    </h3>
+
+                    <p>
+                        Idol completes the visarjan process.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="track-timeline-item">
+
+                <div class="timeline-marker">
+                    03
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-label">
+                        STAGE 03
+                    </span>
+
+                    <h3>
+                        Collection
+                    </h3>
+
+                    <p>
+                        Idol is collected for recovery.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="track-timeline-item">
+
+                <div class="timeline-marker">
+                    04
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-label">
+                        STAGE 04
+                    </span>
+
+                    <h3>
+                        Storage
+                    </h3>
+
+                    <p>
+                        Collected idol is safely stored.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="track-timeline-item">
+
+                <div class="timeline-marker">
+                    05
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-label">
+                        STAGE 05
+                    </span>
+
+                    <h3>
+                        Transportation
+                    </h3>
+
+                    <p>
+                        Idol is transported to the
+                        processing facility.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="track-timeline-item">
+
+                <div class="timeline-marker">
+                    06
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-label">
+                        STAGE 06
+                    </span>
+
+                    <h3>
+                        Processing
+                    </h3>
+
+                    <p>
+                        Recoverable material is separated
+                        and processed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 07 -->
+
+            <div class="track-timeline-item">
+
+                <div class="timeline-marker">
+                    07
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-label">
+                        STAGE 07
+                    </span>
+
+                    <h3>
+                        Material Recovery
+                    </h3>
+
+                    <p>
+                        Useful material is recovered
+                        from the idol.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 08 -->
+
+            <div class="track-timeline-item final-stage">
+
+                <div class="timeline-marker">
+                    08
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-label">
+                        FINAL STAGE
+                    </span>
+
+                    <h3>
+                        Reuse
+                    </h3>
+
+                    <p>
+                        Recovered material gets a
+                        meaningful new purpose.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-brand">
+
+        <a href="/" class="logo">
+            <span>Eco</span>Visarjan
+        </a>
+
+        <p>
+            Ganpati Idol Recovery & Reuse Management System
+        </p>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 EcoVisarjan · Academic DevOps Project
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

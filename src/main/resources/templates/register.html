@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register Idol | EcoVisarjan</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="/" class="logo">
+        <span>Eco</span>Visarjan
+    </a>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/register" class="active">Register Idol</a>
+        <a href="/track">Track Idol</a>
+        <a href="/about">About</a>
+    </div>
+
+    <a href="/register" class="nav-button">
+        Register Now
+    </a>
+
+</nav>
+
+
+<!-- ================= REGISTER PAGE ================= -->
+
+<section class="register-page">
+
+    <div class="register-heading">
+
+        <p class="register-eyebrow">
+            ECOVISARJAN REGISTRATION
+        </p>
+
+        <h1>
+            Register your<br>
+            <span>Ganpati idol.</span>
+        </h1>
+
+        <p>
+            Give your idol a meaningful journey beyond visarjan.
+            Register the details below and become part of the
+            EcoVisarjan recovery program.
+        </p>
+
+    </div>
+
+
+    <!-- ================= FORM CARD ================= -->
+
+    <div class="register-card">
+
+        <div class="register-card-top">
+
+            <div>
+                <p class="form-label">
+                    IDOL REGISTRATION
+                </p>
+
+                <h2>
+                    Tell us about your idol
+                </h2>
+            </div>
+
+            <div class="form-badge">
+                ECO
+            </div>
+
+        </div>
+
+
+        <form action="/register" method="post">
+
+
+            <!-- ROW 1 -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="devoteeName">
+                        Devotee Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="devoteeName"
+                        name="devoteeName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="mobile">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="Enter mobile number"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ROW 2 -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="material">
+                        Idol Material
+                    </label>
+
+                    <select
+                        id="material"
+                        name="material"
+                        required
+                    >
+
+                        <option value="">
+                            Select Material
+                        </option>
+
+                        <option value="POP">
+                            POP
+                        </option>
+
+                        <option value="Clay">
+                            Clay
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="size">
+                        Idol Size
+                    </label>
+
+                    <select
+                        id="size"
+                        name="size"
+                        required
+                    >
+
+                        <option value="">
+                            Select Size
+                        </option>
+
+                        <option value="Small">
+                            Small
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="Large">
+                            Large
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ROW 3 -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Visarjan Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="Enter visarjan location"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="visarjanDate">
+                        Visarjan Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="visarjanDate"
+                        name="visarjanDate"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOVERY OPTION -->
+
+            <label class="recovery-option">
+
+                <input
+                    type="checkbox"
+                    name="recoveryProgram"
+                    value="Yes"
+                >
+
+                <span class="custom-checkbox"></span>
+
+                <span class="recovery-text">
+
+                    <strong>
+                        Join the EcoVisarjan recovery program
+                    </strong>
+
+                    <small>
+                        I want my idol to participate in the
+                        recovery and reuse process.
+                    </small>
+
+                </span>
+
+            </label>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="register-submit"
+            >
+                Register Idol
+                <span>→</span>
+            </button>
+
+
+            <p class="form-note">
+                Your information will be used to track the
+                recovery journey of your registered idol.
+            </p>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-brand">
+
+        <a href="/" class="logo">
+            <span>Eco</span>Visarjan
+        </a>
+
+        <p>
+            Ganpati Idol Recovery & Reuse Management System
+        </p>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 EcoVisarjan · Academic DevOps Project
+    </p>
+
+</footer>
+
+
+</body>
+</html>

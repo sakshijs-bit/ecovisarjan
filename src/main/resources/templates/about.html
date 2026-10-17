@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | EcoVisarjan</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+
+        /* =========================
+           ABOUT PAGE
+        ========================= */
+
+        .about-page {
+            min-height: 100vh;
+            padding: 70px 6% 80px;
+            background:
+                radial-gradient(circle at 8% 15%, rgba(255, 214, 74, 0.16) 0 70px, transparent 71px),
+                radial-gradient(circle at 92% 30%, rgba(255, 214, 74, 0.13) 0 90px, transparent 91px),
+                #fff7d9;
+        }
+
+        .about-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Heading */
+
+        .about-title {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .about-title h2 {
+            margin: 0;
+            color: #075b3a;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .about-subtitle {
+            text-align: center;
+            color: #68745f;
+            font-size: 19px;
+            margin: 0 auto 55px;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        /* Main cards */
+
+        .about-card {
+            position: relative;
+            background: #fffef0;
+            padding: 38px 42px;
+            margin: 25px 0;
+            border-radius: 22px;
+            border: 1px solid #eadb91;
+            box-shadow:
+                0 12px 30px rgba(100, 80, 20, 0.10),
+                0 3px 8px rgba(100, 80, 20, 0.05);
+            text-align: left;
+            overflow: hidden;
+        }
+
+        /* Small decorative circle */
+
+        .about-card::after {
+            content: "";
+            position: absolute;
+            width: 115px;
+            height: 115px;
+            right: -35px;
+            bottom: -40px;
+            border-radius: 50%;
+            background: rgba(255, 214, 74, 0.20);
+            pointer-events: none;
+        }
+
+        .about-card h3 {
+            position: relative;
+            z-index: 2;
+            color: #075b3a;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 31px;
+            margin: 0 0 18px;
+        }
+
+        .about-card p {
+            position: relative;
+            z-index: 2;
+            color: #596b61;
+            font-size: 17px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* Purpose card */
+
+        .purpose-card {
+            border-left: 6px solid #f1c83b;
+        }
+
+        /* Journey */
+
+        .journey-stages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .journey-stage {
+            background: #fff9d9;
+            border: 1px solid #eadb91;
+            border-radius: 16px;
+            padding: 22px 18px;
+            text-align: center;
+            transition: 0.25s ease;
+        }
+
+        .journey-stage:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 22px rgba(100, 80, 20, 0.12);
+        }
+
+        .journey-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .journey-stage h4 {
+            margin: 0 0 7px;
+            color: #075b3a;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+        }
+
+        .journey-stage p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #68745f;
+        }
+
+        /* Vision */
+
+        .vision-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffef0 0%,
+                    #fff9dc 100%
+                );
+        }
+
+        .vision-highlight {
+            margin-top: 24px;
+            padding: 20px 24px;
+            border-radius: 15px;
+            background: rgba(255, 214, 74, 0.18);
+            border: 1px solid #eadb91;
+            color: #075b3a;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Impact */
+
+        .impact-card {
+            background: #fffef0;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .impact-item {
+            background: #fff9d9;
+            padding: 28px 18px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid #eadb91;
+            transition: 0.25s ease;
+        }
+
+        .impact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 22px rgba(100, 80, 20, 0.12);
+        }
+
+        .impact-icon {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .impact-number {
+            color: #075b3a;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 43px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .impact-item p {
+            margin-top: 10px;
+            color: #68745f;
+            font-size: 16px;
+        }
+
+        /* Bottom message */
+
+        .about-message {
+            margin-top: 35px;
+            padding: 35px;
+            text-align: center;
+            border-radius: 22px;
+            background: #075b3a;
+            color: white;
+            box-shadow: 0 12px 30px rgba(20, 70, 45, 0.18);
+        }
+
+        .about-message h3 {
+            margin: 0 0 10px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+        }
+
+        .about-message p {
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.7;
+            opacity: 0.92;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 800px) {
+
+            .about-page {
+                padding: 50px 20px 60px;
+            }
+
+            .about-title h2 {
+                font-size: 40px;
+            }
+
+            .about-subtitle {
+                font-size: 16px;
+                margin-bottom: 35px;
+            }
+
+            .about-card {
+                padding: 28px 24px;
+            }
+
+            .about-card h3 {
+                font-size: 27px;
+            }
+
+            .journey-stages,
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .about-title h2 {
+                font-size: 34px;
+            }
+
+            .about-card p {
+                font-size: 15px;
+            }
+
+            .impact-number {
+                font-size: 38px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌱 EcoVisarjan
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/register">Register</a>
+
+        <a href="/track">Track Idol</a>
+
+        <a href="/about">About</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     ABOUT PAGE
+========================= -->
+
+<section class="about-page">
+
+    <div class="about-container">
+
+
+        <!-- TITLE -->
+
+        <div class="about-title">
+
+            <h2>🌱 About EcoVisarjan</h2>
+
+        </div>
+
+        <p class="about-subtitle">
+            Celebrate with devotion. Immerse with responsibility.
+            Give every idol a meaningful journey beyond visarjan.
+        </p>
+
+
+        <!-- PURPOSE -->
+
+        <div class="about-card purpose-card">
+
+            <h3>Our Purpose</h3>
+
+            <p>
+                EcoVisarjan is a web-based Ganpati Idol Recovery
+                and Reuse Management System designed to organize
+                and simplify the recovery journey of idols after
+                visarjan.
+            </p>
+
+            <br>
+
+            <p>
+                Devotees can register their idols before visarjan
+                and receive a unique EcoVisarjan Idol ID.
+                The registered idol can then be tracked through
+                collection, storage, transportation, processing,
+                material recovery and reuse.
+            </p>
+
+        </div>
+
+
+        <!-- RECOVERY JOURNEY -->
+
+        <div class="about-card">
+
+            <h3>♻️ Recovery Journey</h3>
+
+            <p>
+                EcoVisarjan creates a structured journey for
+                recovered idol materials. Each stage helps keep
+                the recovery process organized and transparent.
+            </p>
+
+
+            <div class="journey-stages">
+
+                <div class="journey-stage">
+
+                    <div class="journey-icon">📝</div>
+
+                    <h4>Registration</h4>
+
+                    <p>
+                        Idol details are recorded in the system.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-stage">
+
+                    <div class="journey-icon">🌊</div>
+
+                    <h4>Visarjan</h4>
+
+                    <p>
+                        The idol completes its visarjan ceremony.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-stage">
+
+                    <div class="journey-icon">🚚</div>
+
+                    <h4>Collection</h4>
+
+                    <p>
+                        Registered idols are collected for recovery.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-stage">
+
+                    <div class="journey-icon">📦</div>
+
+                    <h4>Storage</h4>
+
+                    <p>
+                        Collected materials are safely stored.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-stage">
+
+                    <div class="journey-icon">⚙️</div>
+
+                    <h4>Processing</h4>
+
+                    <p>
+                        Recoverable materials are processed.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-stage">
+
+                    <div class="journey-icon">♻️</div>
+
+                    <h4>Reuse</h4>
+
+                    <p>
+                        Recovered materials find a useful second life.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VISION -->
+
+        <div class="about-card vision-card">
+
+            <h3>🌍 Our Vision</h3>
+
+            <p>
+                Our vision is to encourage responsible visarjan
+                practices and promote the recovery and reuse of
+                materials, contributing towards cleaner communities
+                and more sustainable celebrations.
+            </p>
+
+            <div class="vision-highlight">
+                Every idol deserves a second life — not a place in
+                the waste stream. ♻️
+            </div>
+
+        </div>
+
+
+        <!-- IMPACT -->
+
+        <div class="about-card impact-card">
+
+            <h3>📊 EcoVisarjan Impact</h3>
+
+            <p>
+                Our recovery program helps track the progress of
+                registered idols and their journey towards recovery
+                and reuse.
+            </p>
+
+
+            <div class="impact-grid">
+
+
+                <div class="impact-item">
+
+                    <div class="impact-icon">
+                        🪔
+                    </div>
+
+                    <div class="impact-number">
+                        248
+                    </div>
+
+                    <p>
+                        Idols Registered
+                    </p>
+
+                </div>
+
+
+                <div class="impact-item">
+
+                    <div class="impact-icon">
+                        🚚
+                    </div>
+
+                    <div class="impact-number">
+                        182
+                    </div>
+
+                    <p>
+                        Idols Collected
+                    </p>
+
+                </div>
+
+
+                <div class="impact-item">
+
+                    <div class="impact-icon">
+                        ♻️
+                    </div>
+
+                    <div class="impact-number">
+                        96
+                    </div>
+
+                    <p>
+                        Recovery Cases
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- FINAL MESSAGE -->
+
+        <div class="about-message">
+
+            <h3>Celebrate. Recover. Reuse. 🌱</h3>
+
+            <p>
+                Together, we can make every Ganpati celebration
+                more responsible while preserving the devotion
+                and traditions that make it special.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026 EcoVisarjan |
+    Celebrate Responsibly 🌱
+
+</footer>
+
+
+</body>
+
+</html>
